@@ -34,3 +34,17 @@ data = palmerpenguins::penguins, color = species)
 ggplotly(ggpenguins)
 ```
 
+
+```{r}
+library(ggplot2)
+data(canada.cities, package = "maps")
+# Objects: I'm storing the ggplot figure into viz
+viz <- ggplot(canada.cities, aes(long, lat)) +
+    borders(regions = "canada") +
+    coord_equal() +
+    geom_point(aes(text = name, size = pop), colour = "red", alpha = 1/2) +
+  labs(size = "Population", x = "Longitude", y = "Latitute")
+ggplotly(viz)
+```
+
+
